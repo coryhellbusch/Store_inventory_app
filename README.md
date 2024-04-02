@@ -29,5 +29,17 @@ E.  Add a sample inventory appropriate for your chosen store to the application.
             Added an if statement to add the sample inventory only if there is no inventory
             Modified the name, inventory, and price for the outsourced part
             Changed the name and inventory for the product
-
+F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
+    In the mainscreen.html file, line 88:
+        I added a button "Buy Now" with the reference to a new page, and passed in the product ID
+    Created controller file "BuyScreenController.java"
+        Lines 13-16: created the controller class and private variable productService
+        Lines 18-20: mapped the page, created buyProduct method with the ID parameter
+        Lines 22-26: created if statement to run if inventory was greater than 0, decremented inventory, saved it, and
+            then redirected to the confirmation page
+        Lines 27-29: created the else statement to run if inventory was 0, and redirected to purchase failure page
+        Lines 32-40: mapped the redirect pages
+    Created purchaseSuccessful and purchaseIncomplete html templates
+        Copied the basic info from mainscreen.html, then changed the title, added a header tag, and a link back to the 
+            mainscreen
             
