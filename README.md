@@ -42,4 +42,27 @@ F.  Add a “Buy Now” button to your product list. Your “Buy Now” button m
     Created purchaseSuccessful and purchaseIncomplete html templates
         Copied the basic info from mainscreen.html, then changed the title, added a header tag, and a link back to the 
             mainscreen
-            
+G. Modify the parts to track maximum and minimum inventory by doing the following:
+    •  Add additional fields to the part entity for maximum and minimum inventory.
+    •  Modify the sample inventory to include the maximum and minimum fields.
+    •  Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.
+    •  Rename the file the persistent storage is saved to.
+    •  Modify the code to enforce that the inventory is between or at the minimum and maximum value.
+    In the Part.java file:
+        Lines 31-34: added variables minInv and maxInv
+        Lines 56-64: added new constructor to include maxInv and minInv variables
+        Lines 97-101: added get and set methods for maxInv and minInv
+    In the BootStrapData.java file: 
+        Lines 50-51: added the maxInv and minInv numbers for the sample inventory
+    In the InhousePartForm.html file: 
+        Lines 16-29: added labels for each input, added min and max inventory inputs
+    In the OutsourcedPartForm.html file: 
+        Line 17-29: added labels for each input, added min and max inventory inputs
+    In the application.properties file: 
+        Line 6: changed the name of the storage file
+    In the AddInhousePartController.java file:
+        Lines 42-45, 48, 54-56: added if-else statement to prevent part creation if inventory is outside of max and min bounds
+    In the AddOutsourcedPartController.java file: 
+        Lines 43-46, 49, 54-46: added if-else statement to prevent part creation if inventory is outside of max and min bounds
+    In the BuyScreenController.java file
+        Line 25: fixed a syntax error in the mapping

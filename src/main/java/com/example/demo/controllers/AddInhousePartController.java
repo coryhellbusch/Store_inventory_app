@@ -39,16 +39,21 @@ public class AddInhousePartController{
     @PostMapping("/showFormAddInPart")
     public String submitForm(@Valid @ModelAttribute("inhousepart") InhousePart part, BindingResult theBindingResult, Model theModel){
         theModel.addAttribute("inhousepart",part);
-        if(theBindingResult.hasErrors()){
+        if (part.getInv() < part.getMinInv() || part.getInv() > part.getMaxInv()) {
+            theModel.addAttribute("errorMessage", "Inventory must be within the range of minimum inventory and maximum inventory.");
             return "InhousePartForm";
-        }
-        else{
-        InhousePartService repo=context.getBean(InhousePartServiceImpl.class);
-        InhousePart ip=repo.findById((int)part.getId());
-        if(ip!=null)part.setProducts(ip.getProducts());
-            repo.save(part);
+        } else {
+            if (theBindingResult.hasErrors()) {
+                return "InhousePartForm";
+            } else {
+                InhousePartService repo = context.getBean(InhousePartServiceImpl.class);
+                InhousePart ip = repo.findById((int) part.getId());
+                if (ip != null) part.setProducts(ip.getProducts());
+                repo.save(part);
 
-        return "confirmationaddpart";}
+                return "confirmationaddpart";
+            }
+        }
     }
 
 }

@@ -22,7 +22,7 @@ public class BuyScreenController {
         if (product.getInv() > 0) {
             product.setInv(product.getInv() - 1);
             productService.save(product);
-            return "redirect:/purchaseSuccessful()";
+            return "redirect:/purchaseSuccessful";
         }
         else {
             return"redirect:/purchaseIncomplete";
