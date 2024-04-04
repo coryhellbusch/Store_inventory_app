@@ -66,3 +66,20 @@ G. Modify the parts to track maximum and minimum inventory by doing the followin
         Lines 43-46, 49, 54-46: added if-else statement to prevent part creation if inventory is outside of max and min bounds
     In the BuyScreenController.java file
         Line 25: fixed a syntax error in the mapping
+H. Add validation for between or at the maximum and minimum fields. The validation must include the following:
+    • Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts. 
+    • Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
+    • Display errors when adding and updating parts if the inventory is greater than the maximum.
+    In the AddOutsourcedPartController.java file:
+        Lines 43-48: Added logic to check if the inventory is greater than the max or less than the min, and returned an 
+            error message in each case
+    In the AddInhousePartController.java file: 
+        Lines 42-47: Added logic to check if the inventory is greater than the max or less than the min, and returned an
+            error message in each case
+    In the EnufPartsValidator.java file: 
+        Lines 36-40: added if statement to check if assembling a new product would reduce the inventory of any part to
+            below its minimum inventory, prevented it, and returned an error message
+    In the BootStrapData.java file:
+        Lines 47-122: added parts and products to the sample inventory to correct a previous misunderstanding of the 
+            project requirements
+    
