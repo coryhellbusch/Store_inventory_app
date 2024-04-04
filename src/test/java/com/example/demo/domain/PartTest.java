@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Project: demoDarbyFrameworks2-master
@@ -155,5 +156,21 @@ class PartTest {
         partIn.setId(1l);
         partOut.setId(1l);
         assertEquals(partIn.hashCode(),partOut.hashCode());
+    }
+    @Test
+    void testSetInvMin() {
+        int invMin = 10;
+        partIn.setMinInv(invMin);
+        assertEquals(invMin, partIn.getMinInv());
+        partOut.setMinInv(invMin);
+        assertEquals(invMin, partOut.getMinInv());
+    }
+    @Test
+    void testSetInvMax() {
+        int invMax = 50;
+        partIn.setMaxInv(invMax);
+        assertEquals(invMax, partIn.getMaxInv());
+        partOut.setMaxInv(invMax);
+        assertEquals(invMax, partOut.getMaxInv());
     }
 }

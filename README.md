@@ -82,4 +82,8 @@ H. Add validation for between or at the maximum and minimum fields. The validati
     In the BootStrapData.java file:
         Lines 47-122: added parts and products to the sample inventory to correct a previous misunderstanding of the 
             project requirements
+I. Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
+    In the PartTest.java files:
+        Lines 160-175: added two unit tests, one to test setting the minimum inventory, and the other to test setting 
+            maximum inventory
     
