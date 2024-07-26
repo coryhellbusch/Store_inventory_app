@@ -1,3 +1,9 @@
+This is an inventory tracking application. The front end is in html and the back end is in Java, using the Spring framework. The app allows a user to add/update/delete parts and products. The app uses a MySQL database to store the data.
+Rest APIs facilitate the communication between the front-end and back-end. Data validation is used to prevent SQL injection and to ensure quantities are in range. If a product is created, the required parts are automatically deducted from the parts inventory.
+
+
+
+
 C.  Customize the HTML user interface for your customer’s application. The user interface should include the shop name, 
     the product names, and the names of the parts. 
     In file mainscreen.html:
